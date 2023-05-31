@@ -5,8 +5,7 @@ import Navbar from '../Navbar/Navbar';
 import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
-// import Approach from '../Approach/Approach';
-// import Proyects from '../Proyects/Proyects'
+import Approach from '../Approach/Approach';
 
 function Home() {
     const [scrollY, setScrollY] = useState(0);
@@ -32,9 +31,7 @@ function Home() {
         <div className="App">
             <Navbar headNavbar={true} />
             {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />}
-            {/* <Approach /> */}
-            {/* <Products /> */}
-            {/* <Proyects /> */}
+            <Approach />
             <About />
             <Contact />
             <Footer />

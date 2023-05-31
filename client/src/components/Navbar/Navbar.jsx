@@ -20,7 +20,6 @@ const Navbar = ({ navbarStyle, headNavbar }) => {
         <Brandmark navbarStyle={navbarStyle} />
         <ul className="ulNavbarWeb">
           <li className={navbarStyle ? "" : "pulse"}><a className="prueba" href="/products">Products</a></li>
-          <li><a href="#proyects">Proyects</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
