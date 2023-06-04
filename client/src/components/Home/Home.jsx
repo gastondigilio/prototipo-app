@@ -6,6 +6,7 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 import Footer from '../Footer/Footer';
 import Approach from '../Approach/Approach';
+import MediosDePago from '../MediosDePago/MediosDePago';
 
 function Home() {
     const [scrollY, setScrollY] = useState(0);
@@ -34,6 +35,7 @@ function Home() {
             <Approach />
             <About />
             <Contact />
+            <MediosDePago />
             <Footer />
         </div>
     );

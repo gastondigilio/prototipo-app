@@ -1,10 +1,7 @@
-// import Formas1 from "../../assets/Products/formas1.png";
-// import Formas2 from "../../assets/Products/formas2.png";
-// import Formas3 from "../../assets/Products/formas3.png";
-
 import "./Products.css";
 
 const Products = () => {
+
   return (
     <div id="products" className="products">
       <h2 className="titleProducts">
@@ -40,6 +37,9 @@ const Products = () => {
           </p>
         </div>
       </div>
+      {/* <div >  */}
+        <a href="/home" className="btnVolver">Volver</a>
+      {/* </div> */}
     </div>
   );
 };
