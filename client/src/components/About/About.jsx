@@ -1,10 +1,10 @@
 import React from 'react';
-import './About.css';
+import about from './About.module.css';
 
 const About = () => {
   return (
-    <div id="about" className="about">
-      <h2 className="titleAbout">About us</h2>
+    <div id="about" className={about.about}>
+      <h2 className={about.titleAbout}>About us</h2>
     </div>
   );
 }

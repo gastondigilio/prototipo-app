@@ -1,10 +1,10 @@
 import React from 'react';
-import './Detail.css';
+import detail from './Detail.module.css';
 
 const Detail = () => {
   return (
-    <div id="detail" className="detail">
-      <h2 className="titleDetail">Detail</h2>
+    <div id="detail" className={detail.detail}>
+      <h2 className={detail.titleDetail}>Detail</h2>
     </div>
   );
 }

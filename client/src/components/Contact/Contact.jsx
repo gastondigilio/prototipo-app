@@ -1,4 +1,4 @@
-import "./Contact.css"
+import contact from "./Contact.module.css"
 // import emailjs from 'emailjs-com'
 
 const Contact = () => {
@@ -18,9 +18,9 @@ const Contact = () => {
   // };
 
   return (
-    <div id="contact" className="contact">
-          <h2 className="titleContact">Contact us</h2>
-      <div className="contactContent">
+    <div id="contact" className={contact.contact}>
+          <h2 className={contact.titleContact}>Contact us</h2>
+      {/* <div className="contactContent">
         <div className="contactText">
           <div className="divTexto">
             <p className="primerTexto">QUEREMOS ACERCARTE LA MEJOR SOLUCIÓN PARA AGILIZAR TU EMPRESA.</p>
@@ -46,7 +46,7 @@ const Contact = () => {
             </div>
           </div>
         </form>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -1,10 +1,10 @@
 import React from 'react';
-import './Approach.css';
+import approach from './Approach.module.css';
 
 const Approach = () => {
   return (
-    <div id="approach" className="approach">
-      <h2 className="titleApproach">Approach</h2>
+    <div id="approach" className={approach.approach}>
+      <h2 className={approach.titleApproach}>Approach</h2>
     </div>
   );
 }

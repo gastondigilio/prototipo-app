@@ -1,4 +1,4 @@
-import './Home.css';
+import home from './Home.module.css';
 import React, { useEffect, useState } from "react";
 // import Products from '../Products/Products';
 import Navbar from '../Navbar/Navbar';
@@ -29,7 +29,7 @@ function Home() {
 
 
     return (
-        <div className="App">
+        <div className={home.App}>
             <Navbar headNavbar={true} />
             {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />}
             <Approach />
