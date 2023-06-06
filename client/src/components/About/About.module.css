@@ -1,0 +1,13 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 2rem 2rem 2rem;
+    height: calc(100vh - 10rem);
+    background-color: #ff0000;
+  }
+  
+  .titleAbout {
+    color: #00498A;
+    text-align: center;
+  }
+  

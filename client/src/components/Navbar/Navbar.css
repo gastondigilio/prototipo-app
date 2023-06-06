@@ -1,0 +1,235 @@
+/* @import '../../App.scss'; */
+
+/* .navbar {
+} */
+
+.navbar .web {
+    display: none;
+    height: 60px;
+    z-index: 5;
+  }
+  
+  .navbar .mobile {
+    position: fixed;
+    width: calc(100% - 4rem);
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 2rem;
+    background-color: #333;
+    z-index: 5;
+  }
+  
+  .navbar .mobile .close {
+    position: absolute;
+    right: -4rem;
+    width: 2rem;
+    transition: all ease 1s;
+  }
+  
+  .navbar .mobile .open {
+    position: absolute;
+    right: -4rem;
+    width: 2rem;
+    transition: all ease 1s;
+  }
+  
+  .navbar .mobile .open.enable {
+    right: 2rem;
+    transition: all ease 1s;
+  }
+  
+  .navbar .mobile .close.enable {
+    right: 2rem;
+    transition: all ease 1s;
+  }
+  
+  .navbar .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: calc(-30vw - 4rem);
+    top: 60px;
+    width: 30vw;
+    height: auto;
+    padding: 1rem 2rem 2rem 2rem;
+    border-radius: 0 0 0 10px;
+    background-color: #333;
+    transition: all ease 1s;
+  }
+  
+  .navbar .mobile-menu button {
+    align-self: end;
+    margin-bottom: 2rem;
+    background-color: transparent;
+    border: none;
+  }
+  
+  .navbar .mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .navbar .mobile-menu ul li {
+    align-self: flex-end;
+    margin-top: 1rem;
+  }
+  
+  .navbar .mobile-menu ul li a {
+    color: #FFFFFF;
+  }
+  
+  .navbar .mobile-menu ul li:first-child {
+    margin: 0;
+  }
+  
+  .navbar .mobile-menu.enable {
+    right: -1px;
+    transition: all ease 1s;
+  }
+  
+  .navbar.fixed {
+    display: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .navbar .mobile {
+      display: none;
+    }
+  
+    .navbar .web {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 6rem 0 2rem;
+      background-color: #333;
+      width: calc(100% - 8rem);
+    }
+  
+    .navbar .web ul {
+      display: flex;
+      color: #FFFFFF;
+    }
+  
+    .navbar .web ul li {
+      display: flex;
+      align-items: center;
+      margin-left: 2rem;
+      cursor: pointer;
+    }
+  
+    .navbar .web ul li a {
+      color: #FFFFFF;
+    }
+  
+    .navbar .web ul li:first-child {
+      margin: 0;
+    }
+  
+    .navbar .web .lamp {
+      cursor: pointer;
+      position: absolute;
+      right: 2rem;
+    }
+  }
+  
+  .navbar.fixed {
+    display: block;
+  }
+  
+  .navbar.fixed .web {
+    animation: appear .5s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(143, 143, 143);
+  }
+  
+  .navbar.fixed .web ul li a {
+    color: #FFFFFF;
+  }
+  
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #lib {
+    position: fixed;
+    visibility: hidden;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  #lib .lib {
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transform: scale(2);
+  }
+  
+  #lib .lib svg {
+    display: block;
+  }
+  
+  #lib .lib svg path {
+    transition: all .3s ease;
+  }
+  
+  #lib .lib svg path.onoff {
+    opacity: .8;
+  }
+  
+  #lib .lib svg path.shine {
+    opacity: 0;
+  }
+  
+  #lib .lib svg path.lamp {
+    opacity: 0;
+  }
+  
+  #lib .lib:hover {
+    background: rgba(0, 0, 0, .12);
+  }
+  
+  #lib:checked+.lib svg path:not(.shine, .lamp) {
+    stroke: #FFFFFF;
+  }
+  
+  #lib:checked+.lib svg path {
+    &.onoff {
+      animation: updown .4s linear forwards;
+    }
+  
+    &.shine {
+      opacity: 0;
+    }
+  
+    &.lamp {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes updown {
+    0% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(1px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
