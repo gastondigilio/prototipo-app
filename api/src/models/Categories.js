@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = sequelize => {
 
-  sequelize.define("collection", {
+  sequelize.define("categories", {
 
     id: {
       //add uui
