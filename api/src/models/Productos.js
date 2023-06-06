@@ -14,18 +14,18 @@ module.exports = sequelize => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        gender: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        listPrice: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        price: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-        },
+        // gender: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
+        // listPrice: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
+        // price: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        // },
         salePrice: {
             type: DataTypes.INTEGER,
         },

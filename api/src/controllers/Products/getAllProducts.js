@@ -1,11 +1,11 @@
 const { Productos, Categories } = require("../../db");
 
-async function getProducts(req, res, next) {
+async function getAllProducts(req, res, next) {
     
     try {
 
         const allProducts = await Productos.findAll({
-            attributes: ["id", "productName", "gender", "salePrice", "image1"],
+            attributes: ["id", "productName", "salePrice", "image1"],
             include: [
                 {
                     model: Categories,
@@ -25,4 +25,4 @@ async function getProducts(req, res, next) {
     }
 }
 
-module.exports = { getProducts };
+module.exports = { getAllProducts };
