@@ -1,74 +1,37 @@
-import products from "./Products.module.css";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import CardProducts from "../CardProducts/CardProducts";
+import { getAllProducts } from "../Redux/Actions/index.jsx";
+import productsSt from "./Products.module.css";
 
 const Products = () => {
 
+  const dispatch = useDispatch()
+
+  const products = useSelector(state => state.products);
+
+  useEffect(() => {
+
+    dispatch(getAllProducts());
+
+  }, [dispatch]);
+
   return (
-    <div id="products" className={products.products}>
-      <h2 className={products.titleProducts}>
+    <div id="products" className={productsSt.products}>
+      <h2 className={productsSt.titleProducts}>
         Products
       </h2>
-      <div className={products.cardContainerWeb}>
-        <div className={products.card}>
-          <a href="/products/detail">
-            <h3>Hosting</h3>
-            <hr />
-            {/* <img src={Formas1} alt="" /> */}
-            <p className={products.description}>
-              Lorem ipsum dolor sit, amet consectetur.
-            </p>
-          </a>
-        </div>
-        <div className={products.card}>
-          <h3>Web Page</h3>
-          <hr />
-          {/* <img src={Formas3} alt="" /> */}
-          <p className={products.description}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
-            {/* <br />
-            Doloribus, tenetur. */}
-          </p>
-        </div>
-        <div className={products.card}>
-          <h3>Maintenance</h3>
-          <hr />
-          {/* <img src={Formas2} alt="" /> */}
-          <p className={products.description}>
-            Lorem ipsum dolor sit, amet consectetur.
-          </p>
-        </div>
-      </div>
-      <div className={products.cardContainerMobile}>
-        <div className={products.card}>
-          <a href="/products/detail">
-            <h3>Hosting</h3>
-            <hr />
-            {/* <img src={Formas1} alt="" /> */}
-            <p className={products.description}>
-              Lorem ipsum dolor sit, amet consectetur.
-            </p>
-          </a>
-        </div>
-        <div className={products.card1}>
-          <h3>Web Page</h3>
-          <hr />
-          {/* <img src={Formas3} alt="" /> */}
-          <p className={products.description}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. <br />
-            {/* <br />
-            Doloribus, tenetur. */}
-          </p>
-        </div>
-        <div className={products.card1}>
-          <h3>Maintenance</h3>
-          <hr />
-          {/* <img src={Formas2} alt="" /> */}
-          <p className={products.description}>
-            Lorem ipsum dolor sit, amet consectetur.
-          </p>
-        </div>
+      <div className={productsSt.cardContainerWeb}>
+
+        {
+
+          products.map(e => <CardProducts img={e.image1} name={e.productName} price={e.salePrice} categories={e.category.name} />)
+
+        }
+
       </div>
       {/* <div >  */}
-      <a href="/home" className={products.btnVolver}>Volver</a>
+      <a href="/home" className={productsSt.btnVolver}>Volver</a>
       {/* </div> */}
     </div>
   );
