@@ -1,7 +1,7 @@
 .faqContainer {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el contenido horizontalmente */
+    align-items: center;
     padding: 3rem 1rem 1rem 1rem;
     height: 100vh;
     background-color: rgba(236, 236, 236);
@@ -14,22 +14,22 @@
   
   .faqItem {
     width: 100%;
-    max-width: 400px; /* Ancho máximo de la tarjeta */
+    max-width: 400px; 
     margin-bottom: 1rem;
     cursor: pointer;
-    background-color: #fff; /* Color de fondo de la tarjeta */
-    border-radius: 8px; /* Bordes redondeados de la tarjeta */
-    padding: 1rem; /* Espaciado interno de la tarjeta */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta */
-    padding: 1rem; /* Espaciado interno de la tarjeta */
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
   transition: all 0.3s ease;
   }
   
   .question {
     color: #111;
     font-weight: bold;
-    margin-bottom: 0.5rem; /* Espaciado inferior de la pregunta */
-  border-bottom: 1px solid #ccc; /* Línea inferior para separar la pregunta de la respuesta */
+    margin-bottom: 0.5rem;
+  border-bottom: 1px solid #ccc;
   padding-bottom: 0.5rem; 
   }
   
@@ -40,6 +40,6 @@
   }
 
   .question.active {
-    border-bottom: 1px solid #ccc; /* Línea inferior para separar la pregunta de la respuesta */
+    border-bottom: 1px solid #ccc;
   }
   
