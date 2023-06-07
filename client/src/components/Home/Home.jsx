@@ -21,31 +21,31 @@ function Home() {
         dispatch(getAllProducts());
     }, [dispatch]);
 
-    useEffect(() => {
-        window.addEventListener("scroll", () => {
-            let scroll = window.scrollY;
-            setScrollY(scroll);
-        });
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener("scroll", () => {
+    //         let scroll = window.scrollY;
+    //         setScrollY(scroll);
+    //     });
+    // }, []);
 
-    useEffect(() => {
-        if (scrollY >= 30) {
-            setNavbarStyle("fixed");
-        } else {
-            setNavbarStyle("");
-        }
-    }, [scrollY]);
+    // useEffect(() => {
+    //     if (scrollY >= 30) {
+    //         setNavbarStyle("fixed");
+    //     } else {
+    //         setNavbarStyle("");
+    //     }
+    // }, [scrollY]);
 
 
     return (
         <div className={home.App}>
-            <Navbar headNavbar={true} />
-            {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />}
+            {/* <Navbar headNavbar={true} />
+            {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />} */}
             <Approach />
-            <About />
+            {/* <About /> */}
             <Contact />
             <MediosDePago />
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 }

@@ -20,8 +20,9 @@ const Navbar = ({ navbarStyle, headNavbar }) => {
         <Brandmark navbarStyle={navbarStyle} />
         <ul className="ulNavbarWeb">
           <li className={navbarStyle ? "" : "pulse"}><a className="prueba" href="/products">Products</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/preguntas-frecuentes">Faqs</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
         <div className="lamp">
           <input type="checkbox" id="lib" />

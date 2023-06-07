@@ -1,54 +1,94 @@
-import contact from "./Contact.module.css"
-// import emailjs from 'emailjs-com'
+
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import contact from './Contact.module.css';
+const {
+  TEMPLATE_ID, SERVICE_ID, USER_ID,
+} = process.env;
 
 const Contact = () => {
+  const [senderName, setSenderName] = useState('');
+  const [senderEmail, setSenderEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSending, setIsSending] = useState(false);
+  const [isSent, setIsSent] = useState(false);
 
-  // const sendEmail = (e) => {
-  //   e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
+    setIsSending(true);
 
-  //   emailjs.sendForm('service_b03bhxe', 'template_h28vewp', e.target, 'user_hemxVajsRTQAXOdlZY1u3')
-  //     .then((result) => {
-  //       console.log(result.text);
-  //     }, (error) => {
-  //       console.log(error.text);
-  //     })
-  //   e.target.reset();
-  //   alert('Message Sent');
-  // };
+    const serviceID = 'service_zt9xe3a';
+    const templateID = 'template_0vj7qks';
+    const userID = 'ChlyJXXBOC-gjM_lR';
+
+    const templateParams = {
+      sender_name: senderName,
+      sender_email: senderEmail,
+      message: message,
+    };
+
+    emailjs
+      .send(serviceID, templateID, templateParams, userID)
+      .then(() => {
+        setIsSending(false);
+        setIsSent(true);
+        setSenderName('');
+        setSenderEmail('');
+        setMessage('');
+      })
+      .catch((error) => {
+        setIsSending(false);
+        console.error('Error al enviar el correo:', error);
+      });
+  };
 
   return (
-    <div id="contact" className={contact.contact}>
-          <h2 className={contact.titleContact}>Contact us</h2>
-      {/* <div className="contactContent">
-        <div className="contactText">
-          <div className="divTexto">
-            <p className="primerTexto">QUEREMOS ACERCARTE LA MEJOR SOLUCIÓN PARA AGILIZAR TU EMPRESA.</p>
-            <p className="segundoTexto">Podés solicitarnos una demo de producto o una reunión con nuestros especialistas en desarrollos a medida para poder brindarte la solución en tecnología que tu empresa necesita.</p>
-          </div>
+    <div className={contact.container}>
+      <h2>Contacto</h2>
+      <div className={contact.contactText}>
+        <div className={contact.divTexto}>
+          <p className={contact.primerTexto}>QUEREMOS ACERCARTE LA MEJOR SOLUCIÓN PARA AGILIZAR TU EMPRESA.</p>
+          <p className={contact.segundoTexto}>Podés solicitarnos una demo de producto o una reunión con nuestros especialistas en desarrollos a medida para poder brindarte la solución en tecnología que tu empresa necesita.</p>
         </div>
-        <form className="contactForm">
-          <div className="formContact">
-            <div className="divInput">
-              <input className="inputContact" placeholder="Name" name="name" required />
-            </div>
-            <div className="divInput">
-              <input className="inputContact" name="email" placeholder="Email" required />
-            </div>
-            <div className="divInput">
-              <input className="inputContact" type="text" name="subject" placeholder="Subject" required />
-            </div>
-            <div className="divInput">
-              <textarea type="text" id="" cols="30" rows="8" name="message" placeholder="Your message" required />
-            </div>
-            <div>
-              <input className="inputBtn" type="submit" value="Send Message" />
-            </div>
-          </div>
-        </form>
-      </div> */}
-    </div>
-  )
-}
+      </div>
+      {isSent ? (
+        <p>¡Mensaje enviado correctamente!</p>
+      ) : (
+        <form className={contact.form} onSubmit={handleSubmit}>
+          <label htmlFor="senderName">Nombre:</label>
+          <input
+            type="text"
+            id="senderName"
+            value={senderName}
+            onChange={(e) => setSenderName(e.target.value)}
+            required
+          />
 
-export default Contact
+          <label htmlFor="senderEmail">Email:</label>
+          <input
+            type="email"
+            id="senderEmail"
+            value={senderEmail}
+            onChange={(e) => setSenderEmail(e.target.value)}
+            required
+          />
+
+          <label htmlFor="message">Mensaje:</label>
+          <textarea
+            id="message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            required
+          />
+
+          <button type="submit" className={isSending ? contact.disabledButton : ''} disabled={isSending}>
+            Enviar
+          </button>
+        </form>
+      )}
+    </div>
+  );
+};
+
+export default Contact;
