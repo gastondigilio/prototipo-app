@@ -43,7 +43,7 @@ function Home() {
             {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />} */}
             <Approach />
             {/* <About /> */}
-            <Contact />
+            {/* <Contact /> */}
             <MediosDePago />
             {/* <Footer /> */}
         </div>

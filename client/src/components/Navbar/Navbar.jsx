@@ -63,10 +63,10 @@ const Navbar = ({ navbarStyle, headNavbar }) => {
         />
         <div className={mobileMenu ? "mobile-menu enable" : "mobile-menu"}>
           <ul>
-            <li><a href="#products">Products</a></li>
-            <li><a href="#proyects">Proyects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/preguntas-frecuentes">Faqs</a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
       </div>
