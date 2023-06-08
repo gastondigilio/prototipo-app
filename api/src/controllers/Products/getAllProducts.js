@@ -1,10 +1,10 @@
-const { Productos, Categories } = require("../../db");
+const { Products, Categories } = require("../../db");
 
 async function getAllProducts(req, res, next) {
     
     try {
 
-        const allProducts = await Productos.findAll({
+        const allProducts = await Products.findAll({
             attributes: ["id", "productName", "salePrice", "image1"],
             include: [
                 {
