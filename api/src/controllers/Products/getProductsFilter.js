@@ -2,22 +2,51 @@ const { Products, Categories } = require("../../db");
 
 async function getProductsFilter(req, res, next) {
 
-    const { productName, categoryId } = req.body
-    // console.log('hola', req.body)
+    try {
 
+        const { productName, category, idProduct } = req.body
     
-    const project = await Products.findOne({ where: { productName, categoryId } });
-
-    if (project === null) {
+        let project = [];
+    
+        if (productName) {
+    
+            project = await Products.findOne({ where: { productName } });
+            
+        } else if (category) {
+    
+            const { id, name } = await Categories.findOne({ where: {name: category}});
+    
+            project = await Products.findAll({
+                attributes: ["id", "productName", "salePrice", "image1"],
+                include: [
+                    {
+                        model: Categories,
+                        attributes: ["name"],
+                    },
+                ],
+                where: { categoryId: id }
+            });
+            
+        } else if (idProduct) {
+    
+            project = await Products.findByPk(idProduct);
+            
+        }
         
-        console.log('Not found!');
+        if (project) {
+    
+            res.status(200).send(project);
+    
+        } else {
+    
+            res.status(404).send("No products found");
+            
+        }
+        
+    } catch (error) {
 
-    } else {
-
-        console.log(project instanceof Products); // true
-
-        console.log(project.productName, project.categoryId); // 'My Title'
-
+        console.log(error)
+        
     }
 
 }
