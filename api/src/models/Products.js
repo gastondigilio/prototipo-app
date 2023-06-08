@@ -54,6 +54,21 @@ module.exports = sequelize => {
             allowNull: false,
             defaultValue: 0,
         },
+        featuredProduct: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
+        saleProduct: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: false,
+        },
+        productState: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            defaultValue: true,
+        }
 
     });
 

@@ -14,7 +14,7 @@ async function getProductsFilter(req, res, next) {
             
         } else if (category) {
     
-            const { id, name } = await Categories.findOne({ where: {name: category}});
+            const { id } = await Categories.findOne({ where: {name: category}});
     
             project = await Products.findAll({
                 attributes: ["id", "productName", "salePrice", "image1"],

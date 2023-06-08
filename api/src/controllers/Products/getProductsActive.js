@@ -1,12 +1,20 @@
 const { Products, Categories } = require("../../db");
 
-async function getAllProducts(req, res, next) {
+async function getProductsActive(req, res, next) {
     
     try {
 
         const { offset } = req.body;
 
         const allProducts = await Products.findAndCountAll({
+            attributes: ["id", "productName", "salePrice", "image1", "createdAt", "updatedAt"],
+            include: [
+                {
+                    model: Categories,
+                    attributes: ["name"],
+                },
+            ],
+            where: { productState: true },
             offset,
             limit: 9
           });
@@ -22,4 +30,4 @@ async function getAllProducts(req, res, next) {
     }
 }
 
-module.exports = { getAllProducts };
+module.exports = { getProductsActive };

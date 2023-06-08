@@ -13,6 +13,11 @@ module.exports = sequelize => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        porcenList: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1,
         }
 
     });
