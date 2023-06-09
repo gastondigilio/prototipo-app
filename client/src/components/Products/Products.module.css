@@ -99,6 +99,7 @@ hr {
     .cardContainerWeb {
 
         grid-template-columns: repeat(2, 1fr);
+        height: 150vh;
 
     }
 

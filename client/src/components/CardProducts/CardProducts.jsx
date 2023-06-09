@@ -1,7 +1,7 @@
 import { React } from "react";
 import cardProducts from "./CardProducts.module.css";
 
-export default function CardProducts({ name, price, categories, img }) {
+export default function CardProducts({ name, price, categories, img}) {
 
     return (
         <div className={cardProducts.container} >

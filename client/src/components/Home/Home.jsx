@@ -1,13 +1,9 @@
 import home from './Home.module.css';
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import Products from '../Products/Products';
-import Navbar from '../Navbar/Navbar';
-import About from '../About/About';
-import Contact from '../Contact/Contact';
-import Footer from '../Footer/Footer';
 import Approach from '../Approach/Approach';
 import MediosDePago from '../MediosDePago/MediosDePago';
+import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 import { getAllProducts } from "../Redux/Actions/index.jsx";
 
 function Home() {
@@ -42,10 +38,8 @@ function Home() {
             {/* <Navbar headNavbar={true} />
             {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />} */}
             <Approach />
-            {/* <About /> */}
-            {/* <Contact /> */}
+            <FeaturedProducts/>
             <MediosDePago />
-            {/* <Footer /> */}
         </div>
     );
 }

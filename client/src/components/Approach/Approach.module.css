@@ -1,13 +1,17 @@
 .approach {
-    display: flex;
-    flex-direction: column;
-    padding: 8rem 2rem 2rem 2rem;
-    height: calc(100vh - 10rem);
-    background-color: #575757;
-  }
-  
-  .titleApproach {
-    color: #00498A;
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  /* padding: 8rem 2rem 2rem 2rem; */
+  height: 85vh;
+  background-color: rgba(236, 236, 236);
+}
+
+.titleApproach {
+  color: #00498A;
+  text-align: center;
+}
+
+.carouselContainer {
+  width: 100%;
+  margin-top: 2rem;
+}

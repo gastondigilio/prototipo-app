@@ -9,6 +9,7 @@ const Products = () => {
   const dispatch = useDispatch()
 
   const products = useSelector(state => state.products);
+  console.log("PRODUCTOS: ", products)
 
   useEffect(() => {
 
@@ -22,13 +23,9 @@ const Products = () => {
         Products
       </h2>
       <div className={productsSt.cardContainerWeb}>
-
         {
-
-          products.map(e => <CardProducts img={e.image1} name={e.productName} price={e.salePrice} categories={e.category.name} />)
-
+          products.rows?.map(e => <CardProducts img={e.image1} name={e.productName} price={e.salePrice} categories={e.category.name} key={e.id} />)
         }
-
       </div>
       {/* <div >  */}
       <a href="/home" className={productsSt.btnVolver}>Volver</a>
