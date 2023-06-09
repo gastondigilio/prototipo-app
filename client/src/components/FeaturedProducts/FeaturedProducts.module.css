@@ -15,6 +15,15 @@
     display: none;
 }
 
+.titleProducts::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: #000;
+    margin: 10px auto;
+}
+
 .customCarousel .carousel .control-dots {
     position: absolute;
     bottom: 0;
@@ -45,10 +54,13 @@
         width: 100%;
     }
 
+    .titleProducts {
+        margin-bottom: 3rem;
+    }
+
     .cardContainerMobile {
         display: none;
     }
-
 
     .carouselButtonNext {
         position: absolute;
