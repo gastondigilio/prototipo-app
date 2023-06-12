@@ -26,7 +26,7 @@ const FeaturedProducts = () => {
         autoPlay: false,
         stopOnHover: false,
         centerMode: true,
-        centerSlidePercentage: 33.33,
+        centerSlidePercentage: 100,
         swipeScrollTolerance: 10,
         renderIndicator: () => null,
     };
@@ -64,15 +64,17 @@ const FeaturedProducts = () => {
                     onChange={setCurrentIndex}
                     {...carouselSettings}
                 >
-                    {products.rows?.map((e, index) => (
-                        <CardProducts
-                            img={e.image1}
-                            name={e.productName}
-                            price={e.salePrice}
-                            categories={e.category.name}
-                            key={e.id}
-                        />
-                    ))}
+                    <div>
+                        {products.rows?.map((e, index) => (
+                            <CardProducts
+                                img={e.image1}
+                                name={e.productName}
+                                price={e.salePrice}
+                                categories={e.category.name}
+                                key={e.id}
+                            />
+                        ))}
+                    </div>
                 </Carousel>
                 <div className={featuredProducts.carouselButtons}>
                     <button className={featuredProducts.carouselButtonNext} onClick={handleNext}><img src={ArrowRight} /></button>

@@ -37,8 +37,9 @@ function Home() {
         <div className={home.App}>
             {/* <Navbar headNavbar={true} />
             {navbarStyle === "fixed" && <Navbar navbarStyle={navbarStyle} />} */}
+            {/* <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a> */}
             <Approach />
-            <FeaturedProducts/>
+            <FeaturedProducts />
             <MediosDePago />
         </div>
     );
