@@ -14,20 +14,24 @@ module.exports = sequelize => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // gender: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        // },
+        gender: {
+            type: DataTypes.ENUM("FEMALE", "MALE", "UNISEX"),
+            allowNull: false,
+            defaultValue: "UNISEX",
+        },
         // listPrice: {
         //     type: DataTypes.STRING,
         //     allowNull: false,
         // },
-        // price: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        // },
+        price: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0,
+        },
         salePrice: {
             type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0,
         },
         description: {
             type: DataTypes.TEXT,
