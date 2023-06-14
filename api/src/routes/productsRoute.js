@@ -5,6 +5,7 @@ const { createProduct } = require("../controllers/Products/createProduct");
 const { getProductsFilter } = require("../controllers/Products/getProductsFilter");
 const { getFeaturedProduct } = require("../controllers/Products/getFeaturedProduct");
 const { getSaleProducts } = require("../controllers/Products/getSaleProducts");
+const { patchModifyProduct } = require("../controllers/Products/patchModifyProduct");
 
 const router = Router();
 
@@ -14,5 +15,6 @@ router.get("/productsFilter", getProductsFilter);
 router.get("/featuredProduct", getFeaturedProduct);
 router.get("/saleProducts", getSaleProducts);
 router.post("/", createProduct);
+router.patch("/", patchModifyProduct);
 
 module.exports = router;
