@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   GET_ALL_PRODUCTS,
+  GET_ALL_CATEGORIES,
 } from "./actionTypes";
 
 export function getAllProducts() {
@@ -9,6 +10,18 @@ export function getAllProducts() {
       let res = await axios("products");
 
       return dispatch({ type: GET_ALL_PRODUCTS, payload: res.data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+}
+
+export function getAllCategories() {
+  return async function (dispatch) {
+    try {
+      let res = await axios("categories");
+
+      return dispatch({ type: GET_ALL_CATEGORIES, payload: res.data });
     } catch (error) {
       console.log(error);
     }

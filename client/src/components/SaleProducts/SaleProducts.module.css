@@ -4,7 +4,7 @@
     align-items: center;
     padding: 2rem 2rem 2rem 2rem;
     width: calc(100% - 4rem);
-    background-color: rgba(236, 236, 236);
+    background-color: rgb(240, 238, 238);
     /* height: calc(100vh - 10rem); */
 }
 

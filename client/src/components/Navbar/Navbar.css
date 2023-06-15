@@ -19,7 +19,7 @@
     align-items: center;
     height: 60px;
     padding: 0 2rem;
-    background-color: #333;
+    background-color: #535353;
     z-index: 5;
   }
   
@@ -106,7 +106,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 0 6rem 0 2rem;
-      background-color: #333;
+    background-color: #535353;
       width: calc(100% - 8rem);
       position: fixed;
     }

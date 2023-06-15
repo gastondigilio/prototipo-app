@@ -1,5 +1,6 @@
 import {
     GET_ALL_PRODUCTS,
+    GET_ALL_CATEGORIES
     // SEARCH_PRODUCTS,
     // DETAIL_PRODUCTS,
 } from "../Actions/actionTypes";
@@ -16,6 +17,13 @@ export default function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 products: action.payload,
+                // productsFilter: action.payload,
+            };
+
+        case GET_ALL_CATEGORIES:
+            return {
+                ...state,
+                categories: action.payload,
                 // productsFilter: action.payload,
             };
 

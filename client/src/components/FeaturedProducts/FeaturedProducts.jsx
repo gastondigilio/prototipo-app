@@ -28,7 +28,7 @@ const FeaturedProducts = () => {
     const handlePrev = () => {
         setCurrentIndex(prevIndex => (prevIndex - 1 + (products.rows?.length || 1)) % (products.rows?.length || 1));
     };
-                
+
     const carouselSettingsMobile = {
         showStatus: false,
         showThumbs: false,
@@ -38,7 +38,7 @@ const FeaturedProducts = () => {
         stopOnHover: true,
     };
 
-    const displayedProducts = products.rows?.slice(0, 3);
+    const displayedProducts = products.rows?.slice(0, 4);
 
     return (
         <div className={featuredProducts.featuredProducts}>
@@ -49,7 +49,7 @@ const FeaturedProducts = () => {
                 <div className={featuredProducts.carouselButtons}>
                     <button className={featuredProducts.carouselButtonPrev} onClick={handlePrev}><img src={ArrowLeft} /></button>
                 </div>
-                <div className={featuredProducts.cardRow}> {/* Agregar una clase para configurar la visualización en forma de fila */}
+                <div className={featuredProducts.cardRow}> 
                     {displayedProducts?.map((e, index) => (
                         <CardFeaturedProducts
                             img={e.image1}
@@ -64,7 +64,7 @@ const FeaturedProducts = () => {
                     <button className={featuredProducts.carouselButtonNext} onClick={handleNext}><img src={ArrowRight} /></button>
                 </div>
             </div>
-            <div className={`${featuredProducts.cardContainerMobile} customCarousel`}>
+            {/* <div className={`${featuredProducts.cardContainerMobile} customCarousel`}>
                 <Carousel
                     {...carouselSettingsMobile}
                     renderIndicator={(onClickHandler, isSelected) => (
@@ -85,7 +85,7 @@ const FeaturedProducts = () => {
                         />
                     ))}
                 </Carousel>
-            </div>
+            </div> */}
         </div>
     );
 }

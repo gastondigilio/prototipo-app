@@ -38,7 +38,7 @@ const SaleProducts = () => {
         stopOnHover: true,
     };
 
-    const displayedProducts = products.rows?.slice(0, 3);
+    const displayedProducts = products.rows?.slice(0, 4);
 
     return (
         <div className={saleProducts.saleProducts}>
@@ -49,7 +49,7 @@ const SaleProducts = () => {
                 <div className={saleProducts.carouselButtons}>
                     <button className={saleProducts.carouselButtonPrev} onClick={handlePrev}><img src={ArrowLeft} /></button>
                 </div>
-                <div className={saleProducts.cardRow}> {/* Agregar una clase para configurar la visualización en forma de fila */}
+                <div className={saleProducts.cardRow}> 
                     {displayedProducts?.map((e, index) => (
                         <CardFeaturedProducts
                             img={e.image1}
