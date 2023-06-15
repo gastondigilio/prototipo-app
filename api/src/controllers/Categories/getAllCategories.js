@@ -5,7 +5,7 @@ async function getAllCategories(req, res, next) {
     try {
 
         const allCategories = await Categories.findAll({
-            attributes: ["id", "name"]
+            attributes: ["id", "name", "image"]
         });
         
         if (allCategories) {

@@ -5,7 +5,7 @@ async function createCategories(req, res, next) {
 
   try {
 
-    const { name } = req.body;
+    const { name, image } = req.body;
 
     if (!name) {
 
@@ -21,7 +21,8 @@ async function createCategories(req, res, next) {
 
       where: {
 
-        name
+        name,
+        image
 
       }
 
