@@ -2,7 +2,7 @@ const { Products, Categories } = require("../../db");
 
 async function createProduct(req, res, next) {
   try {
-    const { productName, salePrice, image1, description, categories } = req.body;
+    const { productName, salePrice, image1, description, categories, image } = req.body;
 
     const newProducts = await Products.create({
       productName,
@@ -11,7 +11,7 @@ async function createProduct(req, res, next) {
       description,
     });
 
-    const newCategory = await Categories.findOrCreate({ where: { name: categories } });
+    const newCategory = await Categories.findOrCreate({ where: { name: categories, image: image } });
 
     await newProducts.setCategory(newCategory[0]);
 
