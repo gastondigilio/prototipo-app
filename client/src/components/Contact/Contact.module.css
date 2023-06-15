@@ -2,7 +2,7 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  height: 150vh;
+  /* height: 150vh; */
   padding-top: 4rem;
   background-color: rgba(236, 236, 236);
 }
@@ -44,8 +44,12 @@ textarea {
   margin-bottom: 10px;
 }
 
+input{
+  height: 5vh;
+}
+
 textarea {
-  height: 10vh;
+  height: 15vh;
 }
 
 button {

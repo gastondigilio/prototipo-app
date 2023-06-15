@@ -5,6 +5,7 @@ import Approach from '../Approach/Approach';
 import MediosDePago from '../MediosDePago/MediosDePago';
 import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
 import { getAllProducts } from "../Redux/Actions/index.jsx";
+import SaleProducts from '../SaleProducts/SaleProducts';
 
 function Home() {
     const dispatch = useDispatch();
@@ -40,7 +41,8 @@ function Home() {
             {/* <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a> */}
             <Approach />
             <FeaturedProducts />
-            <MediosDePago />
+            <SaleProducts />
+            {/* <MediosDePago /> */}
         </div>
     );
 }

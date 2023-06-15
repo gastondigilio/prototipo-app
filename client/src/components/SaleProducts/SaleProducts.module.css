@@ -1,9 +1,10 @@
-.featuredProducts {
+.saleProducts {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem 2rem 2rem 2rem;
     width: calc(100% - 4rem);
+    background-color: rgba(236, 236, 236);
     /* height: calc(100vh - 10rem); */
 }
 

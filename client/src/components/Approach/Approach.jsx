@@ -2,8 +2,13 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import approach from './Approach.module.css';
-import BannerAuto from '../../assets/Approach/bannerAuto.jpg';
-import BannerAuto1 from '../../assets/Approach/bannerAuto2.png';
+// import BannerAuto from '../../assets/Approach/bannerAuto.jpg';
+// import BannerAuto1 from '../../assets/Approach/bannerAuto2.png';
+import FotoUno from '../../assets/Approach/1.jpg'
+import FotoDos from '../../assets/Approach/2.jpg'
+import FotoTres from '../../assets/Approach/3.jpg'
+
+
 
 const Approach = () => {
   const carouselSettings = {
@@ -17,16 +22,16 @@ const Approach = () => {
 
   return (
     <div id="approach" className={approach.approach}>
-      <div className={approach.carouselContainer}>
+      <div className={approach.carouselContainerWeb}>
         <Carousel {...carouselSettings}>
           <div>
-            <img src={BannerAuto} alt="Imagen 1" />
+            <img src={FotoUno} alt="Imagen 1" />
           </div>
           <div>
-            <img src={BannerAuto1} alt="Imagen 2" />
+            <img src={FotoDos} alt="Imagen 2" />
           </div>
           <div>
-            <img src={BannerAuto} alt="Imagen 3" />
+            <img src={FotoTres} alt="Imagen 3" />
           </div>
         </Carousel>
       </div>

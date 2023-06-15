@@ -5,11 +5,11 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import CardFeaturedProducts from "../CardFeaturedProducts/CardFeaturedProducts";
 import { getAllProducts } from "../Redux/Actions/index.jsx";
-import featuredProducts from './FeaturedProducts.module.css';
+import saleProducts from './SaleProducts.module.css';
 import ArrowRight from '../../assets/shared/arrowRight.svg'
 import ArrowLeft from '../../assets/shared/arrowLeft.svg'
 
-const FeaturedProducts = () => {
+const SaleProducts = () => {
     const dispatch = useDispatch()
 
     const products = useSelector(state => state.products);
@@ -41,15 +41,15 @@ const FeaturedProducts = () => {
     const displayedProducts = products.rows?.slice(0, 3);
 
     return (
-        <div className={featuredProducts.featuredProducts}>
-            <h2 className={featuredProducts.titleProducts}>
-                Productos destacados
+        <div className={saleProducts.saleProducts}>
+            <h2 className={saleProducts.titleProducts}>
+                Productos en oferta
             </h2>
-            <div className={featuredProducts.cardContainerWeb}>
-                <div className={featuredProducts.carouselButtons}>
-                    <button className={featuredProducts.carouselButtonPrev} onClick={handlePrev}><img src={ArrowLeft} /></button>
+            <div className={saleProducts.cardContainerWeb}>
+                <div className={saleProducts.carouselButtons}>
+                    <button className={saleProducts.carouselButtonPrev} onClick={handlePrev}><img src={ArrowLeft} /></button>
                 </div>
-                <div className={featuredProducts.cardRow}> {/* Agregar una clase para configurar la visualización en forma de fila */}
+                <div className={saleProducts.cardRow}> {/* Agregar una clase para configurar la visualización en forma de fila */}
                     {displayedProducts?.map((e, index) => (
                         <CardFeaturedProducts
                             img={e.image1}
@@ -60,11 +60,11 @@ const FeaturedProducts = () => {
                         />
                     ))}
                 </div>
-                <div className={featuredProducts.carouselButtons}>
-                    <button className={featuredProducts.carouselButtonNext} onClick={handleNext}><img src={ArrowRight} /></button>
+                <div className={saleProducts.carouselButtons}>
+                    <button className={saleProducts.carouselButtonNext} onClick={handleNext}><img src={ArrowRight} /></button>
                 </div>
             </div>
-            <div className={`${featuredProducts.cardContainerMobile} customCarousel`}>
+            <div className={`${saleProducts.cardContainerMobile} customCarousel`}>
                 <Carousel
                     {...carouselSettingsMobile}
                     renderIndicator={(onClickHandler, isSelected) => (
@@ -90,6 +90,6 @@ const FeaturedProducts = () => {
     );
 }
 
-export default FeaturedProducts;
+export default SaleProducts;
 
 
