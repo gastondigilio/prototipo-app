@@ -1,6 +1,6 @@
 import home from './Home.module.css';
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import Approach from '../Approach/Approach';
 import MediosDePago from '../MediosDePago/MediosDePago';
 import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
@@ -9,15 +9,15 @@ import SaleProducts from '../SaleProducts/SaleProducts';
 import Categories from '../Categories/Categories';
 
 function Home() {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [scrollY, setScrollY] = useState(0);
     const [navbarStyle, setNavbarStyle] = useState("");
-    const products = useSelector(state => state.products);
-    console.log("productos", products)
+    // const products = useSelector(state => state.products);
+    // console.log("productos", products)
 
-    useEffect(() => {
-        dispatch(getAllProducts());
-    }, [dispatch]);
+    // useEffect(() => {
+    //     dispatch(getAllProducts());
+    // }, [dispatch]);
 
     // useEffect(() => {
     //     window.addEventListener("scroll", () => {
@@ -44,7 +44,7 @@ function Home() {
             <FeaturedProducts />
             <Categories />
             <SaleProducts />
-            {/* <MediosDePago /> */}
+            <MediosDePago />
         </div>
     );
 }
