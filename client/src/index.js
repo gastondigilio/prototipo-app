@@ -19,6 +19,10 @@ import About from "./components/About/About";
 import PreguntasFrecuentes from "./components/PreguntasFrecuentes/PreguntasFrecuentes";
 import Contact from "./components/Contact/Contact";
 import HomeAdmin from "./components/Admin/HomeAdmin/HomeAdmin";
+import Navbar from "./components/Navbar/Navbar";
+import NavbarAdmin from "./components/Admin/NavbarAdmin/NavbarAdmin";
+import Footer from "./components/Footer/Footer"
+
 dotenv.config();
 
 axios.defaults.baseURL = "http://localhost:3001/";
@@ -28,35 +32,84 @@ const { persistor, store } = Store;
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: (
+      <>
+        <Navbar />
+        <Home />
+        <Footer />
+      </>
+    )
   },
   {
     path: '/products',
-    element: <Products />
+    element: (
+      <>
+        <Navbar />
+        <Products />
+        <Footer />
+      </>
+    )
   },
   {
     path: '/products/detail',
-    element: <Detail />
+    element: (
+      <>
+        <Navbar />
+        <Detail />
+        <Footer />
+      </>
+    )
   },
   {
     path: '/about',
-    element: <About />
+    element: (
+      <>
+        <Navbar />
+        <About />
+        <Footer />
+      </>
+    )
   },
   {
     path: '/preguntas-frecuentes',
-    element: <PreguntasFrecuentes />
+    element: (
+      <>
+        <Navbar />
+        <PreguntasFrecuentes />
+        <Footer />
+      </>
+    )
   },
   {
     path: '/contact',
-    element: <Contact />
+    element: (
+      <>
+        <Navbar />
+        <Contact />
+        <Footer />
+      </>
+    )
   },
   {
     path: '/',
-    element: <ProtectedRouter />,
+    element: (
+      <>
+        {/* <NavbarAdmin />  */}
+        <ProtectedRouter />
+        <Footer />
+      </>
+    ),
     children: [
       {
         path: "/home-admin",
-        element: <HomeAdmin />,
+        element: (
+          <>
+            <div className="prueba">
+              <NavbarAdmin />
+              <HomeAdmin />
+            </div>
+          </>
+        ),
       },
     ]
   },

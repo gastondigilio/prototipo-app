@@ -8,9 +8,41 @@
     align-items: center;
     padding: 20px;
   }
-  
-  .navbarAdmin h1 {
-    font-size: 24px;
-    margin-top: 16px;
+
+  .nombre{
+    margin-bottom: 2rem;
   }
+
+  .ulNavbarAdminWeb{
+    list-style: none!important;
+    padding: 10px;
+  }
+
+  .btnAdminCrear {
+    background-color: rgb(52, 131, 250);
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.btnAdminModificar {
+  background-color: rgb(52, 131, 250);
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
   
