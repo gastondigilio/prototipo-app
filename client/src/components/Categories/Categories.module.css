@@ -4,8 +4,8 @@
     align-items: center;
     padding: 2rem 2rem 2rem 2rem;
     width: calc(100% - 4rem);
-    background-color: #E7E7E7;
-    height: 30em;
+    background-color: rgb(240, 238, 238);
+    height: 35em;
 }
 
 .cardContainerMobile {
@@ -29,15 +29,29 @@
     color: #3483FA;
 }
 
+.btn {
+    background-color: rgb(52, 131, 250);
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     .cardContainerWeb {
         display: flex;
-        /* justify-content: space-around; */
+        justify-content: space-around;
         width: 100%;
     }
 
     .titleProducts {
-        margin-bottom: 3rem;
+        /* margin-bottom: 3rem; */
     }
 
     .cardContainerMobile {

@@ -33,6 +33,7 @@ const Categories = () => {
             <h2 className={allCategories.titleProducts}>
                 Categories
             </h2>
+            <button className={allCategories.btn}>See all categories</button>
             <div className={allCategories.cardContainerWeb}>
                 <div className={allCategories.cardRow}> 
                     {displayedProducts?.map((e, index) => (

@@ -9,11 +9,10 @@ import saleProducts from './SaleProducts.module.css';
 import ArrowRight from '../../assets/shared/arrowRight.svg'
 import ArrowLeft from '../../assets/shared/arrowLeft.svg'
 
-const SaleProducts = () => {
+const SaleProduct = () => {
     const dispatch = useDispatch()
 
     const products = useSelector(state => state.products);
-    console.log("PRODUCTOS DESTACADOS: ", products)
 
     useEffect(() => {
         dispatch(getAllProducts());
@@ -28,7 +27,7 @@ const SaleProducts = () => {
     const handlePrev = () => {
         setCurrentIndex(prevIndex => (prevIndex - 1 + (products.rows?.length || 1)) % (products.rows?.length || 1));
     };
-                
+
     const carouselSettingsMobile = {
         showStatus: false,
         showThumbs: false,
@@ -43,7 +42,7 @@ const SaleProducts = () => {
     return (
         <div className={saleProducts.saleProducts}>
             <h2 className={saleProducts.titleProducts}>
-                Productos en oferta
+                Productos destacados
             </h2>
             <div className={saleProducts.cardContainerWeb}>
                 <div className={saleProducts.carouselButtons}>
@@ -64,7 +63,7 @@ const SaleProducts = () => {
                     <button className={saleProducts.carouselButtonNext} onClick={handleNext}><img src={ArrowRight} /></button>
                 </div>
             </div>
-            <div className={`${saleProducts.cardContainerMobile} customCarousel`}>
+            {/* <div className={`${featuredProducts.cardContainerMobile} customCarousel`}>
                 <Carousel
                     {...carouselSettingsMobile}
                     renderIndicator={(onClickHandler, isSelected) => (
@@ -85,11 +84,11 @@ const SaleProducts = () => {
                         />
                     ))}
                 </Carousel>
-            </div>
+            </div> */}
         </div>
     );
 }
 
-export default SaleProducts;
+export default SaleProduct;
 
 

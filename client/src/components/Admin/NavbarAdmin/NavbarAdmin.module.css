@@ -1,0 +1,16 @@
+.navbarAdmin {
+    /* background-color: #f1f1f1; */
+    background-color: rgba(236, 236, 236);
+    width: 15%; 
+    height: 100vh; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .navbarAdmin h1 {
+    font-size: 24px;
+    margin-top: 16px;
+  }
+  
